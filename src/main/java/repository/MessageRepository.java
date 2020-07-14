@@ -13,7 +13,7 @@ import model.Message;
 @Repository
 public interface MessageRepository extends CrudRepository<Message, Long>{
 	
-	@Query("SELECT m FROM Message m WHERE LOWER(m.username) = LOWER(:username) ORDER BY m.id DESC")
+	@Query("SELECT * FROM Message m WHERE LOWER(m.username) = LOWER(:username) ORDER BY m.id DESC")
     public List<Message> find(@Param("username") String username);
 
 }
